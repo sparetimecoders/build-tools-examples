@@ -9,4 +9,5 @@ steps:
           volumes:
             - "/var/run/docker.sock:/var/run/docker.sock"
           propagate-environment: true
+          mount-checkout: true
     label: build
