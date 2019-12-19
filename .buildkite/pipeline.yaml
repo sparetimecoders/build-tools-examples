@@ -2,7 +2,9 @@ steps:
   - command: |-
       build
     plugins:
-      - docker#v1.0.0:
+      - docker#v3.3.0:
           image: buildtools/build-tools
           workdir: /app
+          volumes:
+            - "/var/run/docker.sock:/var/run/docker.sock"
     label: build
