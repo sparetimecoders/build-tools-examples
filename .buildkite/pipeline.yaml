@@ -1,9 +1,4 @@
 steps:
   - command: |-
       build
-    plugins:
-      - docker#v3.3.0:
-          image: buildtool/build-tools
-          volumes:
-            - "/var/run/docker.sock:/var/run/docker.sock"
     label: build
