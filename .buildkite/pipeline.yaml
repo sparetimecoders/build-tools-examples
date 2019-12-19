@@ -4,5 +4,5 @@ steps:
     plugins:
       - docker#v1.0.0:
           image: buildtools/build-tools
-
+          workdir: /app
     label: build
