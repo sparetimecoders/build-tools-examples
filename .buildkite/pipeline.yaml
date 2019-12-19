@@ -1,0 +1,8 @@
+steps:
+  - command: |-
+      build
+    plugins:
+      - docker#v1.0.0:
+          image: buildtools/build-tools
+
+    label: build

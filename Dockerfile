@@ -1,4 +1,5 @@
 FROM golang:1.13 as go-build
+ENV CGO_ENABLED=0
 WORKDIR /build
 ADD . /build
 
