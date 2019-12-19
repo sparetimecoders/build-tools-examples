@@ -1,6 +1,8 @@
 steps:
   - command: |-
-      build
+      - ls
+      - pwd
+      - build
     plugins:
       - docker#v3.3.0:
           image: buildtool/build-tools
