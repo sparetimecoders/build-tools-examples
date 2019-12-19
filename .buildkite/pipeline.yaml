@@ -1,7 +1,8 @@
 steps:
   - command: 
-      - "ls"
+      - "ls -la ../"
       - "pwd"
+      - "ls -la"
       - "build"
     plugins:
       - docker#v3.3.0:
