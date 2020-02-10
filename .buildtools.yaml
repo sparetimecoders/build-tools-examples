@@ -1,0 +1,4 @@
+environments:
+  local2:
+    context: docker-desktop
+    namespace: default

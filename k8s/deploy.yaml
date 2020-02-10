@@ -1,0 +1,27 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: buildtools-examples
+  annotations:
+    kubernetes.io/change-cause: "${TIMESTAMP} Deployed commit id: ${COMMIT}"
+spec:
+  selector:
+    matchLabels:
+      app: buildtools-examples
+  template:
+    metadata:
+      labels:
+        app: buildtools-examples
+    spec:
+      containers:
+      - image: noregistry/buildtools-examples:${COMMIT}
+        ports:
+          - containerPort: 8080
+        resources:
+          limits:
+            cpu: 1000m
+            memory: 1024Mi
+          requests:
+            cpu: 50m
+            memory: 400Mi
+        name: buildtools-examples
