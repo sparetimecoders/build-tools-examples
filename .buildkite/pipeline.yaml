@@ -1,0 +1,32 @@
+steps:
+  - label: ':package: build'
+    command: "build"
+    plugins:
+      - buildtool/buildtools:
+
+  - wait: ~
+
+  - label: ':whale: push image'
+    command:  "push"
+    plugins:
+      - buildtool/buildtools:
+
+  - wait: ~
+
+  - label: ':shipit: Deploy test'
+    command: 'deploy --namespace test test'
+    branches: "main"
+    plugins:
+      - buildtool/buildtools:
+
+  - wait: ~
+
+  - block: ":rocket: Release PROD"
+    branches: "main"
+
+  - label: ':shipit: Deploy prod'
+    command: ''
+    branches: "main"
+
+notify:
+  - slack: "#alerts-buildkite"

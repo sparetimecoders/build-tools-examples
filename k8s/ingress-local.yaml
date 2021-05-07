@@ -1,0 +1,17 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: buildtools-examples
+spec:
+  rules:
+  - host: "examples.internal"
+    http:
+      paths:
+      - path: "/"
+        pathType: Prefix
+        backend:
+          service:
+            name: buildtools-examples
+            port: 
+              number: 80
+            
