@@ -14,7 +14,7 @@ steps:
   - wait: ~
 
   - label: ':shipit: Deploy test'
-    command: 'deploy --namespace test test'
+    command: 'deploy staging'
     branches: "main"
     plugins:
       - buildtool/buildtools:
